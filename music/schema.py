@@ -17,12 +17,11 @@ class SongType(DjangoObjectType):
 
 
 class Query(graphene.ObjectType): 
-    all_artists = graphene.List(ArtistType) 
-    all_albums = graphene.List(AlbumType) 
-    all_songs = graphene.List(SongType) 
-    def resolve_all_artists(root, info): return artist.objects.all() 
-    def resolve_all_albums(root, info): return Album.objects.all() 
-    def resolve_all_songs(root, info): return Song.objects.all() 
-
+    Artists = graphene.List(ArtistType) 
+    Albums = graphene.List(AlbumType) 
+    Songs = graphene.List(SongType) 
+    def resolve_Artists(root, info): return artist.objects.all() 
+    def resolve_Albums(root, info): return Album.objects.all() 
+    def resolve_Songs(root, info): return Song.objects.all() 
 
 schema = graphene.Schema(query=Query)
