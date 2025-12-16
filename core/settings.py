@@ -27,16 +27,19 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 DEBUG = False
 
+
+# in production scenarios use environment variables to configure these 
+# but since it’s a test task I left them not configured for the sake of speed
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "46.224.71.154",  
 ]
-
 CSRF_TRUSTED_ORIGINS = [
     "http://46.224.71.154:8080",
     "http://localhost:8080",
 ]
+
 
 # Application definition
 
@@ -67,6 +70,9 @@ MIDDLEWARE = [
 
 CORS_ALLOW_ALL_ORIGINS = False
 
+
+# in production scenarios use environment variables to configure these 
+# but since it’s a test task I left them not configured for the sake of speed
 CORS_ALLOWED_ORIGINS = [
     "http://46.224.71.154:8080",
     "http://localhost:8080",
